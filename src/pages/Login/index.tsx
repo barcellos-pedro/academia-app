@@ -1,18 +1,29 @@
 import React from 'react';
 import {StyleSheet, Image, Text, View} from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 
 const Login = () => {
+    const navigation = useNavigation();
+
+    function handleNavigateToSignUp(){
+        navigation.navigate('signUp');
+    }
+
+    function handleNavigateToSignIn(){
+        navigation.navigate('signIn');
+    }
+
     return (
         <View style={styles.container}>            
             <Image style={{resizeMode:'contain', height: 530, width:500,left:66, bottom:20}} source={require('../../images/model-and-circle.png')}/>
             <Text style={styles.title}>Ready to train?</Text>
 
-            <RectButton style={styles.signUp}>
+            <RectButton style={styles.signUp} onPress={handleNavigateToSignUp}>
                 <Text style={styles.signUpText}>Sign up</Text>
             </RectButton>
 
-            <RectButton style={styles.signIn}>
+            <RectButton style={styles.signIn} onPress={handleNavigateToSignIn}>
                 <Text style={styles.sigInText}>Sign in</Text>
             </RectButton>
         </View>
