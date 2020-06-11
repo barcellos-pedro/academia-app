@@ -3,7 +3,7 @@ import {StyleSheet, View, Text, Image} from 'react-native';
 import {Feather as Icon} from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native';
 
-const Splash = () =>{
+const Introduction = () =>{
   const navigation = useNavigation();
 
   function handleToLogin(){
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
   }
 );
   
-export default Splash;
+export default Introduction;
