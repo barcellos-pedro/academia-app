@@ -6,6 +6,7 @@ import Introduction from './pages/Introduction';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
+import Home from './pages/Home';
 
 const AppStack = createStackNavigator();
 
@@ -17,6 +18,7 @@ const Routes = () =>{
                 <AppStack.Screen name='login' component={Login}/>
                 <AppStack.Screen name='signUp' component={SignUp}/>
                 <AppStack.Screen name='signIn' component={SignIn}/>
+                <AppStack.Screen name='home' component={Home}/>
             </AppStack.Navigator>
         </NavigationContainer>
     );

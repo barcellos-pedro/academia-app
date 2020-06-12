@@ -4,6 +4,7 @@ import {StatusBar} from 'react-native';
 import {Roboto_700Bold, Roboto_400Regular, Roboto_100Thin, Roboto_300Light, useFonts} from '@expo-google-fonts/roboto';
 
 import Routes from './src/routes';
+import SignIn from './src/pages/SignIn';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
