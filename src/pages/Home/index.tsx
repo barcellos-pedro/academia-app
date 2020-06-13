@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, ImageBackground, Text, View, SafeAreaView, ScrollView } from 'react-native';
+import { StyleSheet, ImageBackground, Text, View, SafeAreaView, ScrollView, TouchableWithoutFeedback } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons'
-import { TouchableOpacity, RectButton} from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
@@ -17,33 +16,47 @@ const Home = () => {
             <Icon name="arrow-left" size={35} style={styles.arrowLeft} onPress={handleNavigateBack} />
 
             <ScrollView contentContainerStyle={styles.exercisesContainer} horizontal showsHorizontalScrollIndicator={false}>
-                <TouchableOpacity>
+                <TouchableWithoutFeedback>
                     <View style={styles.exerciseItem}>
                         <Text style={styles.exerciseLevel}>Beginner</Text>
                         <Text style={styles.exerciseName}>Body Sculpt</Text>
                         <ImageBackground style={styles.exerciseImage1} source={require('../../images/stretch-model.png')}/>
                     </View>
-                </TouchableOpacity>
+                </TouchableWithoutFeedback>
 
-                <TouchableOpacity>
+                <TouchableWithoutFeedback>
                     <View style={[styles.exerciseItem, {backgroundColor: '#C6E5FC'}]}>
                         <Text style={styles.exerciseLevel}>Beginner</Text>
                         <Text style={styles.exerciseName}>Double Wave</Text>
                         <ImageBackground style={styles.exerciseImage2} source={require('../../images/rope-model.png')}/>
                     </View>
-                </TouchableOpacity>
+                </TouchableWithoutFeedback>
             </ScrollView>
             
             <View style={styles.menu}>
                 <View style={{alignItems: 'center'}}>
                     <ImageBackground  style={styles.halterButton} source={require('../../images/halter-button.png')}/>
                     <ImageBackground style={styles.menuLine} source={require('../../images/menu-bar.png')}/>
-                    <View style={{flexDirection: 'row', marginBottom: 10}}>
-                        <Icon name="home" size={25} style={{marginLeft:10, marginRight: 30, bottom: 20}}/>
-                        <Icon name="search" size={25} style={{marginLeft:0, marginRight: 85, bottom: 20}}/>
-                        <Icon name="list" size={25} style={{marginLeft:85, marginRight: 0, bottom: 20}}/>
-                        <Icon name="user" size={25} style={{marginLeft:30, marginRight:10, bottom: 20}}/>
+
+                    <View style={{flexDirection: 'row', alignItems: 'center', alignContent: 'center'}}>
+                        <View style={{alignItems:'center'}}>
+                            <Icon name="home" size={25} style={{marginLeft:10, marginRight: 25, bottom: 13}}/>
+                            <Text style={{marginRight:17, bottom:10}}>Home</Text>
+                        </View>
+                        <View style={{alignItems:'center', marginHorizontal: 5}}>
+                            <Icon name="search" size={25} style={{marginLeft:0, marginRight: 80, bottom: 12}}/>
+                            <Text style={{marginRight:75, bottom:9}}>Search</Text>
+                        </View>
+                        <View style={{alignItems:'center'}}>
+                            <Icon name="list" size={25} style={{marginLeft:65, marginRight: 0, bottom: 10}}/>
+                            <Text style={{bottom: 8, left:30}}>Plan</Text>
+                        </View>
+                        <View style={{alignItems:'center', marginHorizontal: 5}}>
+                            <Icon name="user" size={25} style={{marginLeft:30, marginRight:10, bottom: 10}}/>
+                            <Text style={{bottom: 5, left: 10}}>Profile</Text>
+                        </View>
                     </View>
+                    
                 </View>
             </View>
 
@@ -100,13 +113,15 @@ const styles = StyleSheet.create({
     menuLine:{
         width: 393,
         height: 63,
-        top: 30
+        top: 40
     },
     halterButton:{
-        width: 98,
-        height: 98,
+        width: 90,
+        height: 90,
         position: 'absolute',
-        bottom: 13
+        bottom: 15,
+        backgroundColor: '#E5E5E5',
+        borderRadius: 50
     },
 });
 
